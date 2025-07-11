@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Desafio: Sistema de conceito por nota</title>
+</head>
+<body>
+
+    <h3>Desafio: Sistema de conceito por nota</h3>
+
+    <input type="text" id="nome" placeholder="Nome do aluno">
+    <input type="number" id="nota" placeholder="Nota do aluno">
+
+    <button onclick="verificar()">Verificar</button>
+
+    <div id="resultado"></div>
+    
+    <script>
+
+        function verificarNota(nome, nota) {
+            let nota = parseFloat(document.getElementById("nota").value);
+
+            if (nota >= 0 && nota <= 10) {
+            console.log("Nota válida:", nota);
+            } else {
+            console.log("Nota inválida! Digite um valor entre 0 e 10.");
+            }
+        }
+
+        function verificar(nome, nota) {
+            const nome = document.getElementById("nome").value;
+            const nota = document.getElementById("nota").value;
+
+            if (nota === "" || isNaN(nota)) {
+            console.log("Digite uma nota válida.");
+}
+    // pega os valores do HTML
+    // chama a função e mostra o resultado
+}
+    </script>
+</body>
+</html>

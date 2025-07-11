@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(199, 199, 199);
+            font-family: 'Times New Roman', Times, serif;
+            padding: 50px;
+        }
+        h3 {
+            font-weight: bold;
+            color: brown;
+        }
+        input { 
+            border: blue;
+        }
+        button{
+            background: pink;
+        }
+        div {
+            font-size: 25px;
+            font-weight: bold;
+            color: orange;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Digite seu nome:</h3>
+    <input type="text" id="nome" placeholder="Seu nome">
+    <input type="number" id="idade" placeholder="Sua idade">
+    <button onclick="mostrarMensagem()">Enviar</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function apresentar(nome, idade) {
+            if (idade < 18) {
+                return `Olá ${nome}! Você ainda é jovem, mas já está programando! 👏`;
+            } else {
+                return `Olá ${nome}! Você é maior de idade e já está mandando bem no JavaScript! 🚀`;
+            }
+        }
+
+        function mostrarMensagem() {
+            const nome = document.getElementById("nome").value;
+            const idade = parseInt(document.getElementById("idade").value);
+
+            if (nome && !isNaN(idade)) {
+                const mensagem = apresentar(nome, idade);
+                document.getElementById("resultado").innerText = mensagem;
+            } else {
+                document.getElementById("resultado").innerText = "Preencha os dois campos corretamente.";
+            }
+        }
+    </script>
+</body>
+</html>
